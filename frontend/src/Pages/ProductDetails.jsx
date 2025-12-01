@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export default function ProductDetails() {
+export default function ProductDetails({cartItem,setCartItem}) {
   let [cartData, setCartData] = useState(null);
   let [index, setIndex] = useState(0);
   let { id } = useParams();
@@ -91,7 +91,10 @@ export default function ProductDetails() {
 
           {/* ---- BUTTONS ---- */}
           <div className="mt-10 flex gap-4">
-            <button className="flex-1 bg-indigo-600 text-white py-3 text-lg rounded-xl shadow hover:bg-indigo-700 transition">
+            <button onClick={()=>{
+              setCartItem([...cartItem, cartData]);
+
+            }} className="flex-1 bg-indigo-600 text-white py-3 text-lg rounded-xl shadow hover:bg-indigo-700 transition">
               Add to Cart
             </button>
 

@@ -13,6 +13,16 @@ export default function Product() {
     getAllData();
   }, []);
 
+
+  if (!allData) {
+    return (
+      <h2 className="text-center mt-10 text-xl text-gray-700 animate-pulse">
+        Loading Product...
+      </h2>
+    );
+  }
+
+
   return (
     <div className="px-6 py-16 max-w-7xl mx-auto">
       

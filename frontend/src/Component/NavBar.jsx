@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ShoppingBagIcon, HomeIcon } from "lucide-react";
+import { ShoppingBagIcon, HomeIcon , ShoppingCartIcon} from "lucide-react";
 
 export default function NavBar() {
   return (
@@ -32,6 +32,15 @@ export default function NavBar() {
             >
               <ShoppingBagIcon size={20} />
               Products
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/cart"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all duration-200"
+            >
+              <ShoppingCartIcon size={20} />
+              Cart
             </Link>
           </li>
 
